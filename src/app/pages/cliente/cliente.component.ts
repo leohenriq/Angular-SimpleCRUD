@@ -13,12 +13,15 @@ export class ClienteComponent implements OnInit {
   acao: string = "";
   cliente: Cliente = new Cliente();
   constructor(private clienteService: ClienteService) { }
-
-  ngOnInit(): void {
+  obterClientes() {
+    this.clientes = []
     this.clienteService.getClientes()
       .subscribe((clientes) => {
         this.clientes = clientes
       })
+  }
+  ngOnInit(): void {
+    this.obterClientes()
   }
   abrirForm(acao: string, cliente: Cliente = new Cliente()) {
     this.acao = acao
@@ -28,5 +31,6 @@ export class ClienteComponent implements OnInit {
   fecharForm() {
     this.acao = ""
     this.abrirFormulario = false
+    this.obterClientes()
   }
 }
