@@ -26,4 +26,7 @@ export class ClienteService {
   deleteCliente(id: number): Observable<any> {
     return this.http.delete(this.clienteUrl + id);
   }
+  searchCep(cep: string): Observable<Cep> {
+    return this.http.get<Cep>(`https://viacep.com.br/ws/${cep}/json/`);
+  }
 }

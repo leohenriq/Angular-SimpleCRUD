@@ -6,7 +6,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { HttpClientInMemoryWebApiModule, InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ModalContatoComponent } from './pages/modal-contato/modal-contato.component';
 
@@ -18,7 +18,9 @@ import { ModalContatoComponent } from './pages/modal-contato/modal-contato.compo
     BrowserModule,
     AppRoutingModule,
     ClienteModule,
-    HttpClientInMemoryWebApiModule.forRoot(AppService),
+    InMemoryWebApiModule.forRoot(AppService, {
+      passThruUnknownUrl: true
+    }),
     NgbModule,
   ],
   providers: [AppService],

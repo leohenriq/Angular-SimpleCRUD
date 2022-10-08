@@ -29,10 +29,14 @@ export class ModalAcoesComponent implements OnInit {
     }
   }
   obterCep() {
-    this.cliente.logradouro.endereco = "Rua teste";
-    this.cliente.logradouro.bairro = "Bairro teste";
-    this.cliente.logradouro.cidade = "Cidade teste";
-    this.cliente.logradouro.estado = "TST";
+    if (this.cliente.logradouro.cep)
+      this.clienteService.searchCep(this.cliente.logradouro.cep)
+        .subscribe((res) => {
+          this.cliente.logradouro.endereco = res.logradouro;
+          this.cliente.logradouro.bairro = res.bairro;
+          this.cliente.logradouro.cidade = res.localidade;
+          this.cliente.logradouro.estado = res.uf;
+        })
   }
   fecharForm() {
     this.activeModal.close();
