@@ -1,0 +1,1658 @@
+{
+    "pipes": [],
+    "interfaces": [],
+    "injectables": [
+        {
+            "name": "AppService",
+            "id": "injectable-AppService-aa63558ef7c9a6f54c016d8b4e5a04747884e6140364531a2d4d938f7bd36b78b68a09e432bf7e5a78d41173ba3a6ecbe3e70981c1a06e4346edabd8dee04bcc",
+            "file": "src/app/app.service.ts",
+            "properties": [],
+            "methods": [
+                {
+                    "name": "createDb",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "{ clientes: {}; }",
+                    "typeParameters": [],
+                    "line": 14,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "description": "",
+            "rawdescription": "\n",
+            "sourceCode": "import { Injectable } from '@angular/core';\r\nimport { InMemoryDbService } from 'angular-in-memory-web-api';\r\nimport { TipoContato } from './enum/tipo-contato';\r\nimport { Cliente } from './model/cliente';\r\nimport { Logradouro } from './model/logradouro';\r\n\r\n@Injectable({\r\n  providedIn: 'root'\r\n})\r\nexport class AppService implements InMemoryDbService {\r\n\r\n\r\n  constructor() { }\r\n  createDb() {\r\n    const clientes: Cliente[] = [\r\n      {\r\n        id: 1,\r\n        nome: 'Cliente 1',\r\n        dataNascimento: new Date(),\r\n        logradouro: {\r\n          id: 1,\r\n          cep: \"01234-567\",\r\n          endereco: \"Rua de teste\",\r\n          numero: 10,\r\n          complemento: \"\",\r\n          bairro: \"Vila Qualquer\",\r\n          cidade: \"São Paulo\",\r\n          estado: \"SP\",\r\n        },\r\n        contatos: [\r\n          {\r\n            id: 1,\r\n            tipo: TipoContato.EMAIL,\r\n            valor: \"email@email.com\"\r\n          },\r\n          {\r\n            id: 2,\r\n            tipo: TipoContato.TELEFONE,\r\n            valor: \"11 3333-3333\"\r\n          },\r\n          {\r\n            id: 3,\r\n            tipo: TipoContato.CELULAR,\r\n            valor: \"11 99999-9999\"\r\n          }\r\n        ]\r\n      },\r\n      {\r\n        id: 2,\r\n        nome: 'Cliente 2',\r\n        dataNascimento: new Date(),\r\n        logradouro: new Logradouro(),\r\n        contatos: []\r\n      }\r\n    ]\r\n    return { clientes };\r\n  }\r\n}\r\n",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 10
+            },
+            "type": "injectable"
+        },
+        {
+            "name": "ClienteService",
+            "id": "injectable-ClienteService-ce58ad9e3a1f42ae74d350262e0c2ecbc7e3ef9a2f533806e819ecaf0a125f1dd7b728ecbb1bf78ae5966ec804d46d6d5cbbff1a9037b65684b708c7dbf9fe76",
+            "file": "src/app/pages/cliente/services/cliente.service.ts",
+            "properties": [
+                {
+                    "name": "clienteUrl",
+                    "defaultValue": "'api/clientes/'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 11,
+                    "modifierKind": [
+                        121
+                    ]
+                }
+            ],
+            "methods": [
+                {
+                    "name": "createCliente",
+                    "args": [
+                        {
+                            "name": "cliente",
+                            "type": "Cliente",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "Observable<Cliente>",
+                    "typeParameters": [],
+                    "line": 18,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "cliente",
+                            "type": "Cliente",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "deleteCliente",
+                    "args": [
+                        {
+                            "name": "id",
+                            "type": "number",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "Observable<any>",
+                    "typeParameters": [],
+                    "line": 26,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "id",
+                            "type": "number",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "editCliente",
+                    "args": [
+                        {
+                            "name": "cliente",
+                            "type": "Cliente",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "Observable<any>",
+                    "typeParameters": [],
+                    "line": 22,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "cliente",
+                            "type": "Cliente",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "getClientes",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "Observable<Cliente[]>",
+                    "typeParameters": [],
+                    "line": 14,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "description": "",
+            "rawdescription": "\n",
+            "sourceCode": "import { HttpClient } from '@angular/common/http';\nimport { Injectable } from '@angular/core';\nimport { Observable } from 'rxjs';\nimport { Cep } from 'src/app/model/cep';\nimport { Cliente } from 'src/app/model/cliente';\n\n@Injectable({\n  providedIn: 'root'\n})\nexport class ClienteService {\n  private clienteUrl = 'api/clientes/';\n  constructor(private http: HttpClient) { }\n\n  getClientes(): Observable<Cliente[]> {\n    return this.http.get<Cliente[]>(this.clienteUrl);\n  }\n\n  createCliente(cliente: Cliente): Observable<Cliente> {\n    return this.http.post<Cliente>(this.clienteUrl, cliente);\n  }\n\n  editCliente(cliente: Cliente): Observable<any> {\n    return this.http.put(this.clienteUrl + cliente.id, cliente);\n  }\n\n  deleteCliente(id: number): Observable<any> {\n    return this.http.delete(this.clienteUrl + id);\n  }\n}\n",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "http",
+                        "type": "HttpClient",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 11,
+                "jsdoctags": [
+                    {
+                        "name": "http",
+                        "type": "HttpClient",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "type": "injectable"
+        }
+    ],
+    "guards": [],
+    "interceptors": [],
+    "classes": [
+        {
+            "name": "Cep",
+            "id": "class-Cep-5d35f9f216a48d7cdaa3a8d477bf5bfa8c59450d1f2bb4cb1ece3b64121196f166b585809b8f50ab4c5063157e4cf17e3831c5b87f240a0930ec60d2f5267e3c",
+            "file": "src/app/model/cep.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "class",
+            "sourceCode": "export class Cep {\r\n  cep: string;\r\n  logradouro: string;\r\n  complemento: string;\r\n  bairro: string;\r\n  localidade: string;\r\n  uf: string;\r\n  ibge: string;\r\n  gia: string;\r\n  ddd: string;\r\n  siafi: string;\r\n}\r\n",
+            "properties": [
+                {
+                    "name": "bairro",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 5
+                },
+                {
+                    "name": "cep",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 2
+                },
+                {
+                    "name": "complemento",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 4
+                },
+                {
+                    "name": "ddd",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 10
+                },
+                {
+                    "name": "gia",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 9
+                },
+                {
+                    "name": "ibge",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 8
+                },
+                {
+                    "name": "localidade",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 6
+                },
+                {
+                    "name": "logradouro",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 3
+                },
+                {
+                    "name": "siafi",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 11
+                },
+                {
+                    "name": "uf",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 7
+                }
+            ],
+            "methods": [],
+            "indexSignatures": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "hostBindings": [],
+            "hostListeners": []
+        },
+        {
+            "name": "Cliente",
+            "id": "class-Cliente-67a36779cc441c4512bf79e120dc4637dabbaea87f4560eaa1304b7c57eb1e13588f5a1850c92ec9ccf8cf7ade679254fe6e9d9d85f61a2b323b247011e6bd37",
+            "file": "src/app/model/cliente.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "class",
+            "sourceCode": "import { Contato } from \"./contato\";\nimport { Logradouro } from \"./logradouro\";\n\nexport class Cliente {\n  id: number;\n  nome: string;\n  dataNascimento: Date | string | null;\n  logradouro: Logradouro;\n  contatos: Contato[]\n}\n",
+            "properties": [
+                {
+                    "name": "contatos",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Contato[]",
+                    "optional": false,
+                    "description": "",
+                    "line": 9
+                },
+                {
+                    "name": "dataNascimento",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Date | string | null",
+                    "optional": false,
+                    "description": "",
+                    "line": 7
+                },
+                {
+                    "name": "id",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "number",
+                    "optional": false,
+                    "description": "",
+                    "line": 5
+                },
+                {
+                    "name": "logradouro",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Logradouro",
+                    "optional": false,
+                    "description": "",
+                    "line": 8
+                },
+                {
+                    "name": "nome",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 6
+                }
+            ],
+            "methods": [],
+            "indexSignatures": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "hostBindings": [],
+            "hostListeners": []
+        },
+        {
+            "name": "Contato",
+            "id": "class-Contato-f7177d3f289a1c741094a7d7147a6fbfa2dba04fae6e132a4b5e4f202be96a015acbbab89e7598ba0f9acf477aeeaf6cf4550a8117035bc60be2ad8247fb432b",
+            "file": "src/app/model/contato.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "class",
+            "sourceCode": "import { TipoContato } from \"../enum/tipo-contato\";\n\nexport class Contato {\n  id:number;\n  tipo: TipoContato\n  valor: string;\n}\n",
+            "properties": [
+                {
+                    "name": "id",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "number",
+                    "optional": false,
+                    "description": "",
+                    "line": 4
+                },
+                {
+                    "name": "tipo",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "TipoContato",
+                    "optional": false,
+                    "description": "",
+                    "line": 5
+                },
+                {
+                    "name": "valor",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 6
+                }
+            ],
+            "methods": [],
+            "indexSignatures": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "hostBindings": [],
+            "hostListeners": []
+        },
+        {
+            "name": "Logradouro",
+            "id": "class-Logradouro-261658b71fc991d595aca5817b3add65797168bf6e48191b022934fc0a08f151b227e4e1e0f48c4eb3a8ed1d1da35ccf6900b87983ae7741604275c9f20b26f2",
+            "file": "src/app/model/logradouro.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "class",
+            "sourceCode": "export class Logradouro {\n  id: number;\n  cep: string;\n  endereco: string;\n  numero: number;\n  complemento: string;\n  bairro: string;\n  cidade: string;\n  estado: string;\n}\n",
+            "properties": [
+                {
+                    "name": "bairro",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 7
+                },
+                {
+                    "name": "cep",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 3
+                },
+                {
+                    "name": "cidade",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 8
+                },
+                {
+                    "name": "complemento",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 6
+                },
+                {
+                    "name": "endereco",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 4
+                },
+                {
+                    "name": "estado",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 9
+                },
+                {
+                    "name": "id",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "number",
+                    "optional": false,
+                    "description": "",
+                    "line": 2
+                },
+                {
+                    "name": "numero",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "number",
+                    "optional": false,
+                    "description": "",
+                    "line": 5
+                }
+            ],
+            "methods": [],
+            "indexSignatures": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "hostBindings": [],
+            "hostListeners": []
+        }
+    ],
+    "directives": [],
+    "components": [
+        {
+            "name": "AppComponent",
+            "id": "component-AppComponent-297fc6e0979cf0a605a598d0b385c279ff38631f4b54ef38f80368c6a9a7a157652f17d54fed8997b75bddd71a32b72c4e11ab475b42451f6eb0052be65a946e",
+            "file": "src/app/app.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-root",
+            "styleUrls": [
+                "./app.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./app.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "title",
+                    "defaultValue": "'simple-crud'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 9
+                }
+            ],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\n\n@Component({\n  selector: 'app-root',\n  templateUrl: './app.component.html',\n  styleUrls: ['./app.component.scss']\n})\nexport class AppComponent {\n  title = 'simple-crud';\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./app.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "templateData": "<app-cliente></app-cliente>\n"
+        },
+        {
+            "name": "ClienteComponent",
+            "id": "component-ClienteComponent-d12d2815fceb4fbfebf747371a5de9294e9464a8e0cd111ecfd3f330e0859fe88715769ed9e975ae0d74fa9816025c6eef3416773e6688f41fee9d1b16da220c",
+            "file": "src/app/pages/cliente/cliente.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-cliente",
+            "styleUrls": [
+                "./cliente.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./cliente.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "clientes",
+                    "defaultValue": "new Array()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Cliente[]",
+                    "optional": false,
+                    "description": "",
+                    "line": 14
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "abrirForm",
+                    "args": [
+                        {
+                            "name": "acao",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        },
+                        {
+                            "name": "cliente",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "defaultValue": "null"
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 26,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "acao",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        },
+                        {
+                            "name": "cliente",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "defaultValue": "null",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 23,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "obterClientes",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 16,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { ClienteService } from './services/cliente.service';\nimport { Cliente } from './../../model/cliente';\nimport { Component, OnInit } from '@angular/core';\nimport { NgbModal } from '@ng-bootstrap/ng-bootstrap';\nimport { ModalAcoesComponent } from './modal-acoes/modal-acoes.component';\nimport { formatDate } from '@angular/common';\n\n@Component({\n  selector: 'app-cliente',\n  templateUrl: './cliente.component.html',\n  styleUrls: ['./cliente.component.scss']\n})\nexport class ClienteComponent implements OnInit {\n  clientes: Cliente[] = new Array();\n  constructor(private clienteService: ClienteService, private modalService: NgbModal) { }\n  obterClientes() {\n    this.clientes = []\n    this.clienteService.getClientes()\n      .subscribe((clientes) => {\n        this.clientes = clientes\n      })\n  }\n  ngOnInit(): void {\n    this.obterClientes()\n  }\n  abrirForm(acao: string, cliente: any = null) {\n    if (cliente) {\n      const dtNasc = cliente.dataNascimento\n      cliente.dataNascimento = dtNasc ? formatDate(dtNasc, 'yyyy-MM-dd', 'en') : \"\"\n    }\n\n    const modalRef = this.modalService.open(ModalAcoesComponent, { size: 'lg', backdrop: 'static' });\n    modalRef.componentInstance.data = { acao, cliente };\n    modalRef.result\n      .then(() => {\n        this.obterClientes()\n      });\n  }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./cliente.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "clienteService",
+                        "type": "ClienteService",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    },
+                    {
+                        "name": "modalService",
+                        "type": "NgbModal",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 14,
+                "jsdoctags": [
+                    {
+                        "name": "clienteService",
+                        "type": "ClienteService",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    },
+                    {
+                        "name": "modalService",
+                        "type": "NgbModal",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<div class=\"row text-center\">\n  <h3>CRUD Simples</h3>\n</div>\n\n<div class=\"container\">\n  <div class=\"row\">\n    <div class=\"col-6 offset-3\">\n      <table class=\"table table-striped table-bordered\">\n        <thead>\n          <tr class=\"text-center\">\n            <th scope=\"col\">ID</th>\n            <th scope=\"col\">Nome</th>\n            <th scope=\"col\">Data de Nascimento</th>\n            <th scope=\"col\">Bairro</th>\n            <th scope=\"col\">\n              <button class=\"btn btn-sm\" (click)=\"abrirForm('Cadastrar')\">\n                <i class=\"bi bi-plus-square text-primary\"></i>\n              </button>\n            </th>\n          </tr>\n        </thead>\n        <tbody *ngIf=\"clientes && clientes.length > 0\">\n          <tr *ngFor=\"let cliente of clientes\" class=\"text-center\">\n            <th scope=\"row\">{{cliente.id}}</th>\n            <td>{{cliente.nome}}</td>\n            <td>{{cliente.dataNascimento | date: 'dd/MM/yyyy'}}</td>\n            <td>{{cliente.logradouro.bairro}}</td>\n            <td>\n              <button class=\"btn btn-sm\" (click)=\"abrirForm('Detalhes', cliente)\">\n                <i class=\"bi bi-eye-fill text-primary\"></i>\n              </button>\n              <button class=\"btn btn-sm\" (click)=\"abrirForm('Editar', cliente)\">\n                <i class=\"bi bi-pencil-fill text-info\"></i>\n              </button>\n              <button class=\"btn btn-sm\" (click)=\"abrirForm('Excluir', cliente)\">\n                <i class=\"bi bi-trash-fill text-danger\"></i>\n              </button>\n            </td>\n          </tr>\n        </tbody>\n      </table>\n      <div class=\"text-center\" *ngIf=\"clientes.length == 0\">\n        <div class=\"spinner-border text-primary\" role=\"status\">\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n"
+        },
+        {
+            "name": "ModalAcoesComponent",
+            "id": "component-ModalAcoesComponent-aff3731f20674bc4b5594ac3f2e81deb8a7410f83782e4aa25460b80e9c59d8852bd446983298016970bdb7bd3ac9a02f07ec5123d69611ee5d608c5bf3adf30",
+            "file": "src/app/pages/cliente/modal-acoes/modal-acoes.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-modal-acoes",
+            "styleUrls": [
+                "./modal-acoes.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./modal-acoes.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "data",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 14,
+                    "type": "any",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "acao",
+                    "defaultValue": "\"\"",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 16
+                },
+                {
+                    "name": "cliente",
+                    "defaultValue": "new Cliente()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Cliente",
+                    "optional": false,
+                    "description": "",
+                    "line": 15
+                },
+                {
+                    "name": "msgExcluir",
+                    "defaultValue": "\"Tem certeza que deseja excluir este cliente?\"",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 17
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "abrirForm",
+                    "args": [
+                        {
+                            "name": "acao",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        },
+                        {
+                            "name": "contato",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "defaultValue": "null"
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 40,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "acao",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        },
+                        {
+                            "name": "contato",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "defaultValue": "null",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "cadastrar",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 61,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "editar",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 67,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "excluir",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 73,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "fecharForm",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 37,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 21,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "obterCep",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 31,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { ClienteService } from './../services/cliente.service';\nimport { Component, Input, OnInit } from '@angular/core';\nimport { Cliente } from 'src/app/model/cliente';\nimport { Logradouro } from 'src/app/model/logradouro';\nimport { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';\nimport { ModalContatoComponent } from '../../modal-contato/modal-contato.component';\n\n@Component({\n  selector: 'app-modal-acoes',\n  templateUrl: './modal-acoes.component.html',\n  styleUrls: ['./modal-acoes.component.scss']\n})\nexport class ModalAcoesComponent implements OnInit {\n  @Input() data: any;\n  cliente: Cliente = new Cliente()\n  acao: string = \"\"\n  msgExcluir: string = \"Tem certeza que deseja excluir este cliente?\";\n  constructor(private clienteService: ClienteService, private activeModal: NgbActiveModal, private modalService: NgbModal) {\n  }\n\n  ngOnInit(): void {\n    this.cliente = this.data.cliente\n    this.acao = this.data.acao\n\n    if (!this.cliente) {\n      this.cliente = new Cliente()\n      this.cliente.logradouro = new Logradouro()\n      this.cliente.contatos = new Array()\n    }\n  }\n  obterCep() {\n    this.cliente.logradouro.endereco = \"Rua teste\";\n    this.cliente.logradouro.bairro = \"Bairro teste\";\n    this.cliente.logradouro.cidade = \"Cidade teste\";\n    this.cliente.logradouro.estado = \"TST\";\n  }\n  fecharForm() {\n    this.activeModal.close();\n  }\n  abrirForm(acao: string, contato: any = null) {\n    const modalRef = this.modalService.open(ModalContatoComponent, { size: 'lg', backdrop: 'static' });\n    modalRef.componentInstance.data = { acao, contato };\n    modalRef.result\n      .then((res) => {\n        if (res.acao == \"Cadastrar\") {\n          this.cliente.contatos.push(res.contato)\n        } else if (res.acao == \"Editar\") {\n          this.cliente.contatos.map(contato => {\n            if (contato.id == res.contato.id) {\n              contato = res.contato\n            }\n          })\n        } else if (res.acao == \"Excluir\") {\n          const index = this.cliente.contatos.map(contato => {\n            return contato.id;\n          }).indexOf(res.contato.id);\n          this.cliente.contatos.splice(index, 1)\n        }\n      });\n  }\n  cadastrar() {\n    this.clienteService.createCliente(this.cliente)\n      .subscribe(() => {\n        this.fecharForm()\n      })\n  }\n  editar() {\n    this.clienteService.editCliente(this.cliente)\n      .subscribe(() => {\n        this.fecharForm()\n      })\n  }\n  excluir() {\n    this.clienteService.deleteCliente(this.cliente.id)\n      .subscribe(() => {\n        this.fecharForm()\n      })\n  }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./modal-acoes.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "clienteService",
+                        "type": "ClienteService",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    },
+                    {
+                        "name": "activeModal",
+                        "type": "NgbActiveModal",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    },
+                    {
+                        "name": "modalService",
+                        "type": "NgbModal",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 17,
+                "jsdoctags": [
+                    {
+                        "name": "clienteService",
+                        "type": "ClienteService",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    },
+                    {
+                        "name": "activeModal",
+                        "type": "NgbActiveModal",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    },
+                    {
+                        "name": "modalService",
+                        "type": "NgbModal",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<div class=\"card\">\n  <div class=\"card-header \">\n    <div class=\"row\">\n      <h3 class=\"col-11\"> {{acao}}</h3>\n      <h3 class=\"col-1\">\n        <i class=\"bi bi-x-circle-fill\" (click)=\"fecharForm()\"></i>\n      </h3>\n    </div>\n  </div>\n  <div class=\"card-body\">\n    <fieldset class=\"border mt-2 p-2\">\n      <legend class=\"w-auto\">Dados </legend>\n      <div class=\"row\">\n        <div class=\"col-8\">\n          <label for=\"nome\" class=\"form-label\">Nome</label>\n          <input type=\"text\" class=\"form-control\" id=\"nome\" [(ngModel)]=\"cliente.nome\"\n            [disabled]=\"acao == 'Excluir' || acao == 'Detalhes'\">\n        </div>\n        <div class=\"col-4\">\n          <label for=\"dataNascimento\" class=\"form-label\">Data de Nascimento</label>\n          <input type=\"date\" class=\"form-control\" id=\"dataNascimento\" [(ngModel)]=\"cliente.dataNascimento\"\n            [disabled]=\"acao == 'Excluir' || acao == 'Detalhes'\">\n        </div>\n      </div>\n    </fieldset>\n    <fieldset class=\"border mt-2 p-2\">\n      <legend class=\"w-auto\">Logradouro</legend>\n      <div class=\"row\">\n        <div class=\"col-4\">\n          <label for=\"cep\" class=\"form-label\">CEP</label>\n          <input type=\"text\" class=\"form-control\" id=\"cep\" [(ngModel)]=\"cliente.logradouro.cep\" (blur)=\"obterCep()\"\n            [disabled]=\"acao == 'Excluir' || acao == 'Detalhes'\">\n        </div>\n        <div class=\"col-6\">\n          <label for=\"endereco\" class=\"form-label\">Endereço</label>\n          <input type=\"text\" class=\"form-control\" id=\"endereco\" [(ngModel)]=\"cliente.logradouro.endereco\" disabled>\n        </div>\n        <div class=\"col-2\">\n          <label for=\"numero\" class=\"form-label\">Número</label>\n          <input type=\"text\" class=\"form-control\" id=\"numero\" [(ngModel)]=\"cliente.logradouro.numero\"\n            [disabled]=\"acao == 'Excluir' || acao == 'Detalhes'\">\n        </div>\n        <div class=\"col-12\">\n          <label for=\"complemento\" class=\"form-label\">Complemento</label>\n          <input type=\"text\" class=\"form-control\" id=\"complemento\" [(ngModel)]=\"cliente.logradouro.complemento\"\n            [disabled]=\"acao == 'Excluir' || acao == 'Detalhes'\">\n        </div>\n        <div class=\"col-6\">\n          <label for=\"bairro\" class=\"form-label\">Bairro</label>\n          <input type=\"text\" class=\"form-control\" id=\"bairro\" [(ngModel)]=\"cliente.logradouro.bairro\" disabled>\n        </div>\n        <div class=\"col-4\">\n          <label for=\"cidade\" class=\"form-label\">Cidade</label>\n          <input type=\"text\" class=\"form-control\" id=\"cidade\" [(ngModel)]=\"cliente.logradouro.cidade\" disabled>\n        </div>\n        <div class=\"col-2\">\n          <label for=\"estado\" class=\"form-label\">Estado</label>\n          <input type=\"text\" class=\"form-control\" id=\"estado\" [(ngModel)]=\"cliente.logradouro.estado\" disabled>\n        </div>\n      </div>\n    </fieldset>\n    <fieldset class=\"border mt-2 p-2\">\n      <legend class=\"w-auto\">Contatos</legend>\n      <table class=\"table table-striped table-bordered\">\n        <thead>\n          <tr class=\"text-center\">\n            <th scope=\"col\">Tipo</th>\n            <th scope=\"col\">Valor</th>\n            <th scope=\"col\" *ngIf=\"acao != 'Excluir' && acao != 'Detalhes'\">\n              <button class=\"btn btn-sm\" (click)=\"abrirForm('Cadastrar')\">\n                <i class=\"bi bi-plus-square text-primary\"></i>\n              </button>\n            </th>\n          </tr>\n        </thead>\n        <tbody *ngIf=\"cliente.contatos && cliente.contatos.length > 0\">\n          <tr *ngFor=\"let contato of cliente.contatos\" class=\"text-center\">\n            <td>{{contato.tipo}}</td>\n            <td>{{contato.valor}}</td>\n            <td *ngIf=\"acao != 'Excluir' && acao != 'Detalhes'\">\n              <button class=\"btn btn-sm\" (click)=\"abrirForm('Editar', contato)\">\n                <i class=\"bi bi-pencil-fill text-info\"></i>\n              </button>\n              <button class=\"btn btn-sm\" (click)=\"abrirForm('Excluir', contato)\">\n                <i class=\"bi bi-trash-fill text-danger\"></i>\n              </button>\n            </td>\n          </tr>\n\n        </tbody>\n      </table>\n    </fieldset>\n    <div *ngIf=\"acao == 'Excluir'\" class=\"alert alert-danger mt-2\">\n      {{msgExcluir}}\n    </div>\n  </div>\n  <div class=\"card-footer\" *ngIf=\"acao != 'Detalhes'\">\n    <div class=\"col-12\">\n      <button class=\"btn btn-success w-100\" (click)=\"cadastrar()\" *ngIf=\"acao == 'Cadastrar'\">{{acao}}</button>\n      <button class=\"btn btn-success w-100\" (click)=\"editar()\" *ngIf=\"acao == 'Editar'\">{{acao}}</button>\n      <button class=\"btn btn-danger w-100\" (click)=\"excluir()\" *ngIf=\"acao == 'Excluir'\">{{acao}}</button>\n    </div>\n  </div>\n</div>\n"
+        },
+        {
+            "name": "ModalContatoComponent",
+            "id": "component-ModalContatoComponent-831f2cf4404317c73848f370bf67a4683ec10f30832b2bfde68fbcc0167a50ed4c4b7557f23058860fda6290e91c0882bdf974e8e9d072ed6a2eed112c38387f",
+            "file": "src/app/pages/modal-contato/modal-contato.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-modal-contato",
+            "styleUrls": [
+                "./modal-contato.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./modal-contato.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "data",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 13,
+                    "type": "any",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "acao",
+                    "defaultValue": "\"\"",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 15
+                },
+                {
+                    "name": "contato",
+                    "defaultValue": "new Contato()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Contato",
+                    "optional": false,
+                    "description": "",
+                    "line": 14
+                },
+                {
+                    "name": "msgExcluir",
+                    "defaultValue": "\"Tem certeza que deseja excluir este contato?\"",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 16
+                },
+                {
+                    "name": "tipoContato",
+                    "defaultValue": "TipoContato",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 12
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "cadastrar",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 32,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "editar",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 36,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "excluir",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 39,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "fecharForm",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 28,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 20,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\nimport { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';\nimport { TipoContato } from 'src/app/enum/tipo-contato';\nimport { Contato } from 'src/app/model/contato';\n\n@Component({\n  selector: 'app-modal-contato',\n  templateUrl: './modal-contato.component.html',\n  styleUrls: ['./modal-contato.component.scss']\n})\nexport class ModalContatoComponent implements OnInit {\n  tipoContato: typeof TipoContato = TipoContato;\n  @Input() data: any;\n  contato: Contato = new Contato()\n  acao: string = \"\"\n  msgExcluir: string = \"Tem certeza que deseja excluir este contato?\";\n  constructor(private activeModal: NgbActiveModal) {\n  }\n\n  ngOnInit(): void {\n    this.contato = this.data.contato\n    this.acao = this.data.acao\n\n    if (!this.contato) {\n      this.contato = new Contato()\n    }\n  }\n  fecharForm() {\n    this.activeModal.close({ acao: \"Fechar\", contato: null });\n  }\n\n  cadastrar() {\n    this.contato.id = Math.random()\n    this.activeModal.close({ acao: this.acao, contato: this.contato });\n  }\n  editar() {\n    this.activeModal.close({ acao: this.acao, contato: this.contato });\n  }\n  excluir() {\n    this.activeModal.close({ acao: this.acao, contato: this.contato });\n  }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./modal-contato.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "activeModal",
+                        "type": "NgbActiveModal",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 16,
+                "jsdoctags": [
+                    {
+                        "name": "activeModal",
+                        "type": "NgbActiveModal",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<div class=\"card\">\n  <div class=\"card-header \">\n    <div class=\"row\">\n      <h3 class=\"col-11\"> {{acao}}</h3>\n      <h3 class=\"col-1\">\n        <i class=\"bi bi-x-circle-fill\" (click)=\"fecharForm()\"></i>\n      </h3>\n    </div>\n  </div>\n  <div class=\"card-body\">\n    <div class=\"row\">\n      <div class=\"col-8\">\n        <label for=\"tipo\" class=\"form-label\">Tipo</label>\n        <select id=\"tipo\" class=\"form-control\" [(ngModel)]=\"contato.tipo\"\n          [disabled]=\"acao == 'Excluir' || acao == 'Detalhes'\">\n          <option *ngFor=\"let enum of tipoContato | keyvalue\" [value]=\"enum.key\">\n            {{ enum.value }}\n          </option>\n        </select>\n      </div>\n      <div class=\"col-4\">\n        <label for=\"valor\" class=\"form-label\">Valor</label>\n        <input type=\"text\" class=\"form-control\" id=\"valor\" [(ngModel)]=\"contato.valor\"\n          [disabled]=\"acao == 'Excluir' || acao == 'Detalhes'\">\n      </div>\n    </div>\n    <div *ngIf=\"acao == 'Excluir'\" class=\"alert alert-danger mt-2\">\n      {{msgExcluir}}\n    </div>\n  </div>\n  <div class=\"card-footer\" *ngIf=\"acao != 'Detalhes'\">\n    <div class=\"col-12\">\n      <button class=\"btn btn-success w-100\" (click)=\"cadastrar()\" *ngIf=\"acao == 'Cadastrar'\">{{acao}}</button>\n      <button class=\"btn btn-success w-100\" (click)=\"editar()\" *ngIf=\"acao == 'Editar'\">{{acao}}</button>\n      <button class=\"btn btn-danger w-100\" (click)=\"excluir()\" *ngIf=\"acao == 'Excluir'\">{{acao}}</button>\n    </div>\n  </div>\n</div>\n"
+        }
+    ],
+    "modules": [
+        {
+            "name": "AppModule",
+            "id": "module-AppModule-c26ed39918e1a8c66c7fee92a4e9db6d8442a1cb027fc8750edb7db365725a32e8175d74b1c9af802b1fa6a390a55dfb96292719f9791ec07e2a558e132e1fca",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "src/app/app.module.ts",
+            "methods": [],
+            "sourceCode": "import { AppService } from './app.service';\nimport { ClienteService } from './pages/cliente/services/cliente.service';\nimport { ClienteModule } from './pages/cliente/cliente.module';\nimport { NgModule } from '@angular/core';\nimport { BrowserModule } from '@angular/platform-browser';\n\nimport { AppRoutingModule } from './app-routing.module';\nimport { AppComponent } from './app.component';\nimport { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';\nimport { NgbModule } from '@ng-bootstrap/ng-bootstrap';\nimport { ModalContatoComponent } from './pages/modal-contato/modal-contato.component';\n\n@NgModule({\n  declarations: [\n    AppComponent\n  ],\n  imports: [\n    BrowserModule,\n    AppRoutingModule,\n    ClienteModule,\n    HttpClientInMemoryWebApiModule.forRoot(AppService),\n    NgbModule,\n  ],\n  providers: [AppService],\n  bootstrap: [AppComponent]\n})\nexport class AppModule { }\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": [
+                        {
+                            "name": "AppService"
+                        }
+                    ]
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "AppComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": [
+                        {
+                            "name": "AppRoutingModule"
+                        },
+                        {
+                            "name": "ClienteModule"
+                        }
+                    ]
+                },
+                {
+                    "type": "exports",
+                    "elements": []
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": [
+                        {
+                            "name": "AppComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "AppRoutingModule",
+            "id": "module-AppRoutingModule-78922b3ae99d2c5249b333980bd5afde1b120b2cc6fedfd41b8b2cc90f279797cb4b22e183bf7e1d1dfab8c6100e77e7812c110234d81f866f544f28a3e18b15",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "src/app/app-routing.module.ts",
+            "methods": [],
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { RouterModule, Routes } from '@angular/router';\n\nconst routes: Routes = [];\n\n@NgModule({\n  imports: [RouterModule.forRoot(routes)],\n  exports: [RouterModule]\n})\nexport class AppRoutingModule { }\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": []
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": []
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "ClienteModule",
+            "id": "module-ClienteModule-13414d78bf6cac2e57cc6f8fbb561949d179a62e2cd7f06e9d43238b1ba010edbbd787b19611933bfeeead464fb49bd7b5b26cb52ae86522ba0d08d76bb636c4",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "src/app/pages/cliente/cliente.module.ts",
+            "methods": [],
+            "sourceCode": "import { ClienteService } from './services/cliente.service';\nimport { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { ClienteComponent } from './cliente.component';\nimport { HttpClientModule } from '@angular/common/http';\nimport { ModalAcoesModule } from './modal-acoes/modal-acoes.module';\nimport { ModalContatoModule } from '../modal-contato/modal-contato.module';\n\n@NgModule({\n  declarations: [\n    ClienteComponent\n  ],\n  imports: [\n    CommonModule,\n    HttpClientModule,\n    ModalAcoesModule,\n    ModalContatoModule\n  ],\n  exports: [\n    ClienteComponent\n  ],\n  providers: [\n    ClienteService\n  ]\n})\nexport class ClienteModule { }\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": [
+                        {
+                            "name": "ClienteService"
+                        }
+                    ]
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "ClienteComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": [
+                        {
+                            "name": "ModalAcoesModule"
+                        },
+                        {
+                            "name": "ModalContatoModule"
+                        }
+                    ]
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "ClienteComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "ModalAcoesModule",
+            "id": "module-ModalAcoesModule-cfafc972b4e974aae247a854597345203fdad9a92e98ecf2261ac5aaf2044eba76ed700cf1222af54d1eb420d13a5e48bb051dd662aad145b767b7628c5fed4e",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "src/app/pages/cliente/modal-acoes/modal-acoes.module.ts",
+            "methods": [],
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { ModalAcoesComponent } from './modal-acoes.component';\nimport { FormsModule } from '@angular/forms';\n\n@NgModule({\n  declarations: [\n    ModalAcoesComponent],\n  imports: [\n    CommonModule,\n    FormsModule,\n  ]\n})\nexport class ModalAcoesModule { }\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "ModalAcoesComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": []
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "ModalContatoModule",
+            "id": "module-ModalContatoModule-ecbd88ca76436a8c0c5e82ffb7a6675d83d05148094f3ade7c96597f6faa88b8e8b52d68c29f3198546456d1320404b86e13f600091cea3e357ccc9577695fde",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "src/app/pages/modal-contato/modal-contato.module.ts",
+            "methods": [],
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { ModalContatoComponent } from './modal-contato.component';\nimport { FormsModule } from '@angular/forms';\n\n@NgModule({\n  declarations: [\n    ModalContatoComponent\n  ],\n  imports: [\n    CommonModule,\n    FormsModule,\n  ]\n})\nexport class ModalContatoModule { }\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "ModalContatoComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": []
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        }
+    ],
+    "miscellaneous": {
+        "variables": [
+            {
+                "name": "context",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/test.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "require.context('./', true, /\\.spec\\.ts$/)"
+            },
+            {
+                "name": "environment",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/environments/environment.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "object",
+                "defaultValue": "{\n  production: false\n}"
+            },
+            {
+                "name": "environment",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/environments/environment.prod.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "object",
+                "defaultValue": "{\n  production: true\n}"
+            },
+            {
+                "name": "require",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/test.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "literal type"
+            }
+        ],
+        "functions": [],
+        "typealiases": [],
+        "enumerations": [
+            {
+                "name": "TipoContato",
+                "childs": [
+                    {
+                        "name": "EMAIL",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "value": "e-mail"
+                    },
+                    {
+                        "name": "TELEFONE",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "value": "telefone"
+                    },
+                    {
+                        "name": "CELULAR",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "value": "celular"
+                    }
+                ],
+                "ctype": "miscellaneous",
+                "subtype": "enum",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "file": "src/app/enum/tipo-contato.ts"
+            }
+        ],
+        "groupedVariables": {
+            "src/test.ts": [
+                {
+                    "name": "context",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/test.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "require.context('./', true, /\\.spec\\.ts$/)"
+                },
+                {
+                    "name": "require",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/test.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "literal type"
+                }
+            ],
+            "src/environments/environment.ts": [
+                {
+                    "name": "environment",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/environments/environment.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "object",
+                    "defaultValue": "{\n  production: false\n}"
+                }
+            ],
+            "src/environments/environment.prod.ts": [
+                {
+                    "name": "environment",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/environments/environment.prod.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "object",
+                    "defaultValue": "{\n  production: true\n}"
+                }
+            ]
+        },
+        "groupedFunctions": {},
+        "groupedEnumerations": {
+            "src/app/enum/tipo-contato.ts": [
+                {
+                    "name": "TipoContato",
+                    "childs": [
+                        {
+                            "name": "EMAIL",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "value": "e-mail"
+                        },
+                        {
+                            "name": "TELEFONE",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "value": "telefone"
+                        },
+                        {
+                            "name": "CELULAR",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "value": "celular"
+                        }
+                    ],
+                    "ctype": "miscellaneous",
+                    "subtype": "enum",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "file": "src/app/enum/tipo-contato.ts"
+                }
+            ]
+        },
+        "groupedTypeAliases": {}
+    },
+    "routes": {
+        "name": "<root>",
+        "kind": "module",
+        "className": "AppModule",
+        "children": [
+            {
+                "name": "routes",
+                "filename": "src/app/app-routing.module.ts",
+                "module": "AppRoutingModule",
+                "children": [],
+                "kind": "module"
+            }
+        ]
+    },
+    "coverage": {
+        "count": 0,
+        "status": "low",
+        "files": [
+            {
+                "filePath": "src/app/app.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "AppComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/app.service.ts",
+                "type": "injectable",
+                "linktype": "injectable",
+                "name": "AppService",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/model/cep.ts",
+                "type": "class",
+                "linktype": "classe",
+                "name": "Cep",
+                "coveragePercent": 0,
+                "coverageCount": "0/11",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/model/cliente.ts",
+                "type": "class",
+                "linktype": "classe",
+                "name": "Cliente",
+                "coveragePercent": 0,
+                "coverageCount": "0/6",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/model/contato.ts",
+                "type": "class",
+                "linktype": "classe",
+                "name": "Contato",
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/model/logradouro.ts",
+                "type": "class",
+                "linktype": "classe",
+                "name": "Logradouro",
+                "coveragePercent": 0,
+                "coverageCount": "0/9",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/pages/cliente/cliente.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ClienteComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/6",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/pages/cliente/modal-acoes/modal-acoes.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ModalAcoesComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/13",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/pages/cliente/services/cliente.service.ts",
+                "type": "injectable",
+                "linktype": "injectable",
+                "name": "ClienteService",
+                "coveragePercent": 0,
+                "coverageCount": "0/7",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/pages/modal-contato/modal-contato.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ModalContatoComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/12",
+                "status": "low"
+            },
+            {
+                "filePath": "src/environments/environment.prod.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "environment",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/environments/environment.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "environment",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/test.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "context",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/test.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "require",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            }
+        ]
+    }
+}
