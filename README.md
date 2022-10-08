@@ -1,27 +1,17 @@
 # SimpleCrud
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.1.
+## Ideia
+O back-end e front-end tem suas particularidades, neste projeto, a ideia é criar uma base simples para quem quer iniciar no front-end vindo do back-end, onde alguns conceitos não se aplicam aqui...
 
-## Development server
+Para quem já esta familiarizado com o front-end e com o Angular, a base que está na branch master é um exemplo de coisas que já vi a galera fazendo e a ideia é criar outras branches para fazer a comparação entre as boas práticas do Angular e erros cometidos no dia-a-dia.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Outro ponto importante é sobre os testes, como dito acima, gostaria de criar um projeto base/modelo que atenda desde o desenvolvimento até os testes unitários, portanto, este será um tópico abordado aqui também.
+Vou implementar os testes em todas as branches para entendermos as dificuldades de cada uma delas.
 
-## Code scaffolding
+## Colaboração
+Neste projeto vou contar com a colaboração do ... que é ...
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Fica aberto a qualquer outra pessoa que queira ajudar...
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Rodar o projeto
+Rode o `npm i` para instalar as dependências e `ng serve` para executar o projeto local. No seu navegador, abra a url `http://localhost:4200/` para visualizar o projeto.
