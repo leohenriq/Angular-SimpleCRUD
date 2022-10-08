@@ -11,6 +11,7 @@
             <th scope="col">ID</th>
             <th scope="col">Nome</th>
             <th scope="col">Data de Nascimento</th>
+            <th scope="col">Bairro</th>
             <th scope="col">
               <button class="btn btn-sm" (click)="abrirForm('Cadastrar')">
                 <i class="bi bi-plus-square text-primary"></i>
@@ -22,7 +23,8 @@
           <tr *ngFor="let cliente of clientes" class="text-center">
             <th scope="row">{{cliente.id}}</th>
             <td>{{cliente.nome}}</td>
-            <td>{{cliente.dataNascimento  | date: 'dd/MM/yyyy'}}</td>
+            <td>{{cliente.dataNascimento | date: 'dd/MM/yyyy'}}</td>
+            <td>{{cliente.logradouro.bairro}}</td>
             <td>
               <button class="btn btn-sm" (click)="abrirForm('Detalhes', cliente)">
                 <i class="bi bi-eye-fill text-primary"></i>
@@ -37,8 +39,10 @@
           </tr>
         </tbody>
       </table>
+      <div class="text-center" *ngIf="clientes.length == 0">
+        <div class="spinner-border text-primary" role="status">
+        </div>
+      </div>
     </div>
   </div>
 </div>
-
-<app-modal-acoes *ngIf="abrirFormulario" [acao]="acao" [cliente]="cliente" (fechar)="fecharForm()"></app-modal-acoes>

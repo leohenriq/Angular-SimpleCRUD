@@ -1,14 +1,15 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ModalAcoesComponent } from './modal-acoes.component';
+import { ModalContatoComponent } from './modal-contato.component';
 import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
-    ModalAcoesComponent],
+    ModalContatoComponent
+  ],
   imports: [
     CommonModule,
     FormsModule,
   ]
 })
-export class ModalAcoesModule { }
+export class ModalContatoModule { }

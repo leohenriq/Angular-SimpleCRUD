@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { ClienteComponent } from './cliente.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ModalAcoesModule } from './modal-acoes/modal-acoes.module';
+import { ModalContatoModule } from '../modal-contato/modal-contato.module';
 
 @NgModule({
   declarations: [
@@ -12,7 +13,8 @@ import { ModalAcoesModule } from './modal-acoes/modal-acoes.module';
   imports: [
     CommonModule,
     HttpClientModule,
-    ModalAcoesModule
+    ModalAcoesModule,
+    ModalContatoModule
   ],
   exports: [
     ClienteComponent

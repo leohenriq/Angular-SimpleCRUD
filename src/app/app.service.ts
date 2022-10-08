@@ -17,7 +17,16 @@ export class AppService implements InMemoryDbService {
         id: 1,
         nome: 'Cliente 1',
         dataNascimento: new Date(),
-        logradouro: new Logradouro(),
+        logradouro: {
+          id: 1,
+          cep: "01234-567",
+          endereco: "Rua de teste",
+          numero: 10,
+          complemento: "",
+          bairro: "Vila Qualquer",
+          cidade: "São Paulo",
+          estado: "SP",
+        },
         contatos: [
           {
             id: 1,
