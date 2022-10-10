@@ -9,7 +9,7 @@ Outro ponto importante é sobre os testes, como dito acima, gostaria de criar um
 Vou implementar os testes em todas as branches para entendermos as dificuldades de cada uma delas.
 
 ## 👪 Colaboração
-Neste projeto vou contar com a colaboração do [Fabio Miranda](https://github.com/fabiomirandaa).
+Neste projeto vou contar com a colaboração do especialista em Angular [Fabio Miranda](https://github.com/fabiomirandaa).
 
 Fica aberto a qualquer outra pessoa que queira ajudar...
 
